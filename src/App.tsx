@@ -1,162 +1,102 @@
+import { useState } from "react"
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import "./App.css"
 
+import Home from "./pages/Home"
 import Victimology from "./pages/Victimology"
 import Types from "./pages/Types"
 import Rights from "./pages/Rights"
 import Impact from "./pages/Impact"
 import Prevention from "./pages/Prevention"
+import Law from "./pages/Law"
 import Cases from "./pages/Cases"
 import Resources from "./pages/Resources"
-import Law from "./pages/Law"
 import About from "./pages/About"
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const closeMenu = () => {
+    setMenuOpen(false)
+  }
+
   return (
-    <nav className="navbar">
+    <>
+      <nav className="navbar">
+        <Link to="/" className="nav-logo" onClick={closeMenu}>
+          Victim<span>Lens</span>
+        </Link>
 
-      <a href="/" className="nav-logo">
-        Victim<span>Lens</span>
-      </a>
-
-      <div className="nav-links">
-        <a href="/">Home</a>
-        <a href="/victimology">Victimology</a>
-        <a href="/types">Types</a>
-        <a href="/rights">Rights</a>
-        <a href="/impact">Impact</a>
-        <a href="/prevention">Prevention</a>
-        <a href="/law">Law</a>
-        <a href="/cases">Cases</a>
-        <a href="/resources">Resources</a>
-        <a href="/about">About</a>
-      </div>
-
- <a href="/about#contact" className="nav-contact">
-  Contact
-</a>
-
-    </nav>
-  )
-}
-
-function Home() {
-  return (
-    <main className="victimlens">
-
-      <Navbar />
-
-      <section className="hero">
-
-        <video
-          className="hero-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source
-            src="/videos/victimlens-hero.mp4"
-            type="video/mp4"
-          />
-        </video>
-
-        <div className="hero-overlay" />
-
-        <div className="hero-content">
-
-          <span className="eyebrow">
-            VICTIMOLOGY • LEARNING • JUSTICE
-          </span>
-
-          <h1>
-            Understanding Victims.
-            <br />
-            <span>Advancing Justice.</span>
-          </h1>
-
-          <p>
-            Explore victimology, understand the experiences of victims,
-            discover their rights, and learn how prevention and justice
-            can create safer communities.
-          </p>
-
-          <div className="hero-buttons">
-
-            <a
-              href="/victimology"
-              className="primary-button"
-            >
-              Explore Victimology
-            </a>
-
-            <a
-              href="/rights"
-              className="secondary-button"
-            >
-              Discover Victim Rights
-            </a>
-
-          </div>
-
+        <div className="nav-links">
+          <Link to="/">Home</Link>
+          <Link to="/victimology">Victimology</Link>
+          <Link to="/types">Types</Link>
+          <Link to="/rights">Rights</Link>
+          <Link to="/impact">Impact</Link>
+          <Link to="/prevention">Prevention</Link>
+          <Link to="/law">Law</Link>
+          <Link to="/cases">Cases</Link>
+          <Link to="/resources">Resources</Link>
+          <Link to="/about">About</Link>
         </div>
 
-      </section>
+        <button
+          className="menu-toggle"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Open navigation menu"
+        >
+          {menuOpen ? "✕" : "☰"}
+        </button>
 
-    </main>
-  )
-}
+        <Link
+          to="/about#contact"
+          className="nav-contact"
+          onClick={closeMenu}
+        >
+          Contact
+        </Link>
 
-function Page({ children }: { children: React.ReactNode }) {
-  return (
-    <main className="victimlens">
-      <Navbar />
-      {children}
-    </main>
+        {menuOpen && (
+          <div className="mobile-menu">
+            <Link to="/" onClick={closeMenu}>Home</Link>
+            <Link to="/victimology" onClick={closeMenu}>Victimology</Link>
+            <Link to="/types" onClick={closeMenu}>Types</Link>
+            <Link to="/rights" onClick={closeMenu}>Rights</Link>
+            <Link to="/impact" onClick={closeMenu}>Impact</Link>
+            <Link to="/prevention" onClick={closeMenu}>Prevention</Link>
+            <Link to="/law" onClick={closeMenu}>Law</Link>
+            <Link to="/cases" onClick={closeMenu}>Cases</Link>
+            <Link to="/resources" onClick={closeMenu}>Resources</Link>
+            <Link to="/about" onClick={closeMenu}>About</Link>
+            <Link to="/about#contact" onClick={closeMenu}>Contact</Link>
+          </div>
+        )}
+      </nav>
+    </>
   )
 }
 
 function App() {
+  return (
+    <BrowserRouter>
+      <div className="victimlens">
+        <Navbar />
 
-  const path = window.location.pathname
-
-  if (path === "/victimology") {
-    return <Page><Victimology /></Page>
-  }
-
-  if (path === "/types") {
-    return <Page><Types /></Page>
-  }
-
-  if (path === "/rights") {
-    return <Page><Rights /></Page>
-  }
-
-  if (path === "/impact") {
-    return <Page><Impact /></Page>
-  }
-
-  if (path === "/prevention") {
-    return <Page><Prevention /></Page>
-  }
-
-  if (path === "/law") {
-    return <Page><Law /></Page>
-  }
-
-  if (path === "/cases") {
-    return <Page><Cases /></Page>
-  }
-
-  if (path === "/resources") {
-    return <Page><Resources /></Page>
-  }
-
-  if (path === "/about") {
-    return <Page><About /></Page>
-  }
-
-  return <Home />
-
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/victimology" element={<Victimology />} />
+          <Route path="/types" element={<Types />} />
+          <Route path="/rights" element={<Rights />} />
+          <Route path="/impact" element={<Impact />} />
+          <Route path="/prevention" element={<Prevention />} />
+          <Route path="/law" element={<Law />} />
+          <Route path="/cases" element={<Cases />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  )
 }
 
 export default App
