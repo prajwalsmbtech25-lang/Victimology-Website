@@ -61,7 +61,7 @@ function Resources() {
         <div className="subpage-hero-content">
 
           <span className="subpage-label">
-            07 — RESOURCES
+        
           </span>
 
           <h1>
@@ -93,7 +93,7 @@ function Resources() {
           <div className="section-heading">
 
             <span className="section-number">
-              07 — Resource Directory
+               Resource Directory
             </span>
 
             <h2>

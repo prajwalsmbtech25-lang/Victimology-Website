@@ -48,7 +48,7 @@ function Impact() {
 
         <div className="subpage-hero-content">
           <span className="subpage-label">
-            04 — IMPACT OF VICTIMISATION
+         
           </span>
 
           <h1>
@@ -78,7 +78,7 @@ function Impact() {
 
           <div className="section-heading">
             <span className="section-number">
-              04 — Understanding Impact
+              Understanding Impact
             </span>
 
             <h2>

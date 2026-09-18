@@ -48,7 +48,7 @@ function Rights() {
 
         <div className="subpage-hero-content">
           <span className="subpage-label">
-            03 — VICTIM RIGHTS
+            
           </span>
 
           <h1>
@@ -78,7 +78,7 @@ function Rights() {
 
           <div className="section-heading">
             <span className="section-number">
-              03 — Fundamental Rights
+             Fundamental Rights
             </span>
 
             <h2>

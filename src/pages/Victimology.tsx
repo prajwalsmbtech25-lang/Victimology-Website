@@ -8,7 +8,7 @@ function Victimology() {
       <section className="subpage-hero">
         <div className="subpage-hero-content">
           <span className="subpage-label">
-            01 — VICTIMOLOGY
+          
           </span>
 
           <h1>
@@ -36,7 +36,7 @@ function Victimology() {
 
           <div className="section-heading">
             <span className="section-number">
-              01 — Definition
+            
             </span>
 
             <h2>What is Victimology?</h2>

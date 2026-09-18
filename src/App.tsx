@@ -12,6 +12,7 @@ import Law from "./pages/Law"
 import Cases from "./pages/Cases"
 import Resources from "./pages/Resources"
 import About from "./pages/About"
+import SpaceBackground from "./components/ui/space-background"
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -79,6 +80,9 @@ function Navbar() {
 function App() {
   return (
     <BrowserRouter>
+      {/* 3D star background: sits behind every page except Home */}
+      <SpaceBackground />
+
       <div className="victimlens">
         <Navbar />
 

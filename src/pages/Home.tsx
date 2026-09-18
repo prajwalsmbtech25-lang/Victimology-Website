@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import HorizonHero from "../components/ui/horizon-hero-section"
 import "./home.css"
 
 const stats = [
@@ -51,112 +52,9 @@ function Home() {
   return (
     <div className="home-page">
 
-      {/* ================= HERO ================= */}
+      {/* ================= HERO (3D scroll hero) ================= */}
 
-      <section className="home-hero">
-
-        <video
-          className="home-hero-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-        >
-          <source
-            src="/videos/victimlens-hero.mp4"
-            type="video/mp4"
-          />
-        </video>
-
-        <div className="home-video-overlay" />
-        <div className="home-video-vignette" />
-
-        <div className="home-hero-content">
-
-          <div className="home-eyebrow">
-            <span className="home-eyebrow-line" />
-            <span>VICTIMOLOGY • LEARNING • JUSTICE</span>
-          </div>
-
-          <h1 className="home-hero-title">
-            Understanding Victims.
-            <br />
-            <span>Advancing Justice.</span>
-          </h1>
-
-          <p className="home-hero-description">
-            Explore victimology, understand the lived experiences of
-            victims, discover their rights, and learn how prevention
-            and justice can create safer, more compassionate communities.
-          </p>
-
-          <div className="home-hero-buttons">
-
-            <Link
-              to="/victimology"
-              className="home-btn home-btn-gold"
-            >
-              Explore Victimology
-              <span>→</span>
-            </Link>
-
-            <Link
-              to="/rights"
-              className="home-btn home-btn-outline"
-            >
-              Discover Victim Rights
-              <span>→</span>
-            </Link>
-
-          </div>
-
-          <div className="home-hero-info">
-
-            <div className="home-info-item">
-              <strong>GLOBAL</strong>
-              <span>Perspective</span>
-            </div>
-
-            <div className="home-info-divider" />
-
-            <div className="home-info-item">
-              <strong>JUSTICE</strong>
-              <span>Focused</span>
-            </div>
-
-            <div className="home-info-divider" />
-
-            <div className="home-info-item">
-              <strong>AWARENESS</strong>
-              <span>Driven</span>
-            </div>
-
-          </div>
-
-        </div>
-
-        {/* ================= HERO STATS ================= */}
-
-        <div className="home-hero-stats">
-
-          <div className="home-stats-container">
-
-            {stats.map((stat) => (
-              <div
-                className="home-stat"
-                key={stat.number}
-              >
-                <strong>{stat.number}</strong>
-                <span>{stat.label}</span>
-              </div>
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
+      <HorizonHero stats={stats} />
 
 
       {/* ================= WHY VICTIMLENS ================= */}

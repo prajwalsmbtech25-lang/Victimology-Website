@@ -54,7 +54,7 @@ function Cases() {
 
         <div className="subpage-hero-content">
           <span className="subpage-label">
-            06 — CASES & ANALYSIS
+        
           </span>
 
           <h1>
@@ -84,7 +84,7 @@ function Cases() {
 
           <div className="section-heading">
             <span className="section-number">
-              06 — Case Analysis
+              Case Analysis
             </span>
 
             <h2>

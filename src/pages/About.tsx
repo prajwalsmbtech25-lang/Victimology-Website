@@ -37,7 +37,7 @@ function About() {
         <div className="subpage-hero-content">
 
           <span className="subpage-label">
-            ABOUT VICTIMLENS
+        
           </span>
 
           <h1>
@@ -69,7 +69,7 @@ function About() {
           <div className="section-heading">
 
             <span className="section-number">
-              ABOUT — THE PLATFORM
+               THE PLATFORM
             </span>
 
             <h2>

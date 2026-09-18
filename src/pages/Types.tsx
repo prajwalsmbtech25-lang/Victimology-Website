@@ -76,7 +76,7 @@ function Types() {
 
         <div className="subpage-hero-content">
           <span className="subpage-label">
-            02 — VICTIM TYPES
+         
           </span>
 
           <h1>
@@ -106,7 +106,7 @@ function Types() {
 
           <div className="section-heading">
             <span className="section-number">
-              02 — Classification
+               Classification
             </span>
 
             <h2>

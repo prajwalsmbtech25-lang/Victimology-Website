@@ -533,20 +533,80 @@ button {
 /* LOGO */
 
 .nav-logo {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  text-decoration: none;
+
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.055em;
+
   color: #f5f2e8;
 
-  font-size: 1.25rem;
-  font-weight: 700;
+  transform-style: preserve-3d;
+  perspective: 800px;
 
-  letter-spacing: 0.08em;
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.12),
+    0 3px 0 rgba(0, 0, 0, 0.45),
+    0 8px 18px rgba(0, 0, 0, 0.35);
+
+  animation: logoFloat 4s ease-in-out infinite;
 }
 
 .nav-logo span {
+  position: relative;
   color: #c9a227;
+
+  text-shadow:
+    0 1px 0 #8c7016,
+    0 2px 0 #745d12,
+    0 4px 0 rgba(0, 0, 0, 0.45),
+    0 8px 18px rgba(201, 162, 39, 0.22);
+
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+.nav-logo:hover {
+  transform:
+    translateY(-2px)
+    rotateX(8deg)
+    rotateY(-4deg)
+    scale(1.04);
+
+  filter: brightness(1.12);
+}
+
+.nav-logo:hover span {
+  color: #e0bb35;
+
+  text-shadow:
+    0 1px 0 #a78318,
+    0 2px 0 #8c7016,
+    0 4px 0 rgba(0, 0, 0, 0.45),
+    0 0 18px rgba(201, 162, 39, 0.45);
+}
+
+@keyframes logoFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotateX(0deg);
+  }
+
+  50% {
+    transform: translateY(-1px) rotateX(2deg);
+  }
 }
 
 /* NAV LINKS */
-
 .nav-links {
   display: flex;
   align-items: center;

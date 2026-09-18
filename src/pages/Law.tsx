@@ -49,7 +49,7 @@ function Law() {
         <div className="subpage-hero-content">
 
           <span className="subpage-label">
-            08 — LAW & SOCIETY
+           
           </span>
 
           <h1>
@@ -83,7 +83,7 @@ function Law() {
           <div className="section-heading">
 
             <span className="section-number">
-              08 — Legal Framework
+          Legal Framework
             </span>
 
             <h2>

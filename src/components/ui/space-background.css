@@ -1,0 +1,44 @@
+/* =========================================================
+   SPACE BACKGROUND — sits behind every page (except Home)
+   ========================================================= */
+
+.space-bg {
+  position: fixed;
+  inset: 0;
+
+  /* -1 = behind all page content, including the globe */
+  z-index: -1;
+
+  /* clicks and scrolling pass straight through it */
+  pointer-events: none;
+
+  background: radial-gradient(
+    ellipse at 50% 110%,
+    #0b1626 0%,
+    #050708 55%,
+    #030404 100%
+  );
+}
+
+.space-bg canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* A light dark veil so body text stays easy to read over the stars.
+   Make the number smaller (0.25) for a brighter background,
+   or bigger (0.5) for a darker one. */
+.space-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(3, 4, 4, 0.3);
+}
+
+/* Let the background show through the site's outer wrappers */
+#root:has(.space-bg),
+#root:has(.space-bg) .victimlens {
+  background: transparent;
+}

@@ -48,7 +48,7 @@ function Prevention() {
 
         <div className="subpage-hero-content">
           <span className="subpage-label">
-            05 — PREVENTION
+         
           </span>
 
           <h1>
@@ -78,7 +78,7 @@ function Prevention() {
 
           <div className="section-heading">
             <span className="section-number">
-              05 — Prevention Framework
+              Prevention Framework
             </span>
 
             <h2>
