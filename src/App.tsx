@@ -1,5 +1,11 @@
-import { useState } from "react"
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+import { useEffect } from "react"
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom"
+
 import "./App.css"
 
 import Home from "./pages/Home"
@@ -12,74 +18,31 @@ import Law from "./pages/Law"
 import Cases from "./pages/Cases"
 import Resources from "./pages/Resources"
 import About from "./pages/About"
+
 import SpaceBackground from "./components/ui/space-background"
+import Navbar from "./components/layout/Navbar"
 
-function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false)
+function ScrollToTop() {
+  const { pathname } = useLocation()
 
-  const closeMenu = () => {
-    setMenuOpen(false)
-  }
+  useEffect(() => {
+    window.history.scrollRestoration = "manual"
 
-  return (
-    <>
-      <nav className="navbar">
-        <Link to="/" className="nav-logo" onClick={closeMenu}>
-          Victim<span>Lens</span>
-        </Link>
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    })
+  }, [pathname])
 
-        <div className="nav-links">
-          <Link to="/">Home</Link>
-          <Link to="/victimology">Victimology</Link>
-          <Link to="/types">Types</Link>
-          <Link to="/rights">Rights</Link>
-          <Link to="/impact">Impact</Link>
-          <Link to="/prevention">Prevention</Link>
-          <Link to="/law">Law</Link>
-          <Link to="/cases">Cases</Link>
-          <Link to="/resources">Resources</Link>
-          <Link to="/about">About</Link>
-        </div>
-
-        <button
-          className="menu-toggle"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Open navigation menu"
-        >
-          {menuOpen ? "✕" : "☰"}
-        </button>
-
-        <Link
-          to="/about#contact"
-          className="nav-contact"
-          onClick={closeMenu}
-        >
-          Contact
-        </Link>
-
-        {menuOpen && (
-          <div className="mobile-menu">
-            <Link to="/" onClick={closeMenu}>Home</Link>
-            <Link to="/victimology" onClick={closeMenu}>Victimology</Link>
-            <Link to="/types" onClick={closeMenu}>Types</Link>
-            <Link to="/rights" onClick={closeMenu}>Rights</Link>
-            <Link to="/impact" onClick={closeMenu}>Impact</Link>
-            <Link to="/prevention" onClick={closeMenu}>Prevention</Link>
-            <Link to="/law" onClick={closeMenu}>Law</Link>
-            <Link to="/cases" onClick={closeMenu}>Cases</Link>
-            <Link to="/resources" onClick={closeMenu}>Resources</Link>
-            <Link to="/about" onClick={closeMenu}>About</Link>
-            <Link to="/about#contact" onClick={closeMenu}>Contact</Link>
-          </div>
-        )}
-      </nav>
-    </>
-  )
+  return null
 }
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
+
       {/* 3D star background: sits behind every page except Home */}
       <SpaceBackground />
 

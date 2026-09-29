@@ -1,0 +1,1233 @@
+/* =========================================================
+   VICTIMLENS
+   VICTIMOLOGY — INTERACTIVE EXPERIENCE
+   ========================================================= */
+
+.victimology-page {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  background: #080909;
+  color: #f5f2e8;
+}
+
+.victimology-container {
+  width: min(1240px, 88%);
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   MARK
+   ========================================================= */
+
+.victimology-mark {
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+}
+
+.victimology-mark svg {
+  width: 100%;
+  height: 100%;
+}
+
+.victimology-mark-ring {
+  fill: none;
+  stroke: rgba(201, 162, 39, 0.42);
+  stroke-width: 1.3;
+}
+
+.victimology-mark-eye {
+  fill: rgba(201, 162, 39, 0.035);
+  stroke: #c9a227;
+  stroke-width: 2.5;
+}
+
+.victimology-mark-lens {
+  fill: #090a0a;
+  stroke: rgba(201, 162, 39, 0.85);
+  stroke-width: 2;
+}
+
+.victimology-mark-core {
+  fill: #f5f2e8;
+}
+
+.victimology-node {
+  fill: #c9a227;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.victimology-hero {
+  position: relative;
+  min-height: 88vh;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  align-items: center;
+
+  padding: 120px 6% 80px;
+
+  background:
+    radial-gradient(
+      circle at 72% 50%,
+      rgba(201, 162, 39, 0.065),
+      transparent 34%
+    ),
+    #080909;
+}
+
+.victimology-hero-content {
+  position: relative;
+  z-index: 3;
+
+  max-width: 720px;
+}
+
+.victimology-identity {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  margin-bottom: 36px;
+}
+
+.victimology-identity > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.victimology-identity span {
+  color: #f5f2e8;
+
+  font-size: 0.83rem;
+  font-weight: 900;
+  letter-spacing: 0.17em;
+}
+
+.victimology-identity small {
+  color: rgba(245, 242, 232, 0.38);
+
+  font-size: 0.49rem;
+  letter-spacing: 0.16em;
+}
+
+.victimology-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  margin-bottom: 17px;
+
+  color: #c9a227;
+
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+}
+
+.victimology-eyebrow span {
+  display: block;
+
+  width: 36px;
+  height: 1px;
+
+  background: #c9a227;
+}
+
+.victimology-hero h1 {
+  margin: 0;
+
+  color: #f5f2e8;
+
+  font-size: clamp(4rem, 7vw, 7rem);
+  line-height: 0.91;
+
+  letter-spacing: -0.06em;
+}
+
+.victimology-hero h1 span {
+  color: #c9a227;
+}
+
+.victimology-hero p {
+  max-width: 640px;
+
+  margin: 28px 0 0;
+
+  color: rgba(245, 242, 232, 0.56);
+
+  font-size: 0.96rem;
+  line-height: 1.8;
+}
+
+.victimology-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+
+  margin-top: 31px;
+}
+
+.victimology-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 47px;
+  padding: 0 18px;
+
+  border-radius: 8px;
+
+  font-size: 0.69rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.22s ease,
+    background 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.victimology-btn:hover {
+  transform: translateY(-3px);
+}
+
+.victimology-btn-gold {
+  background: #c9a227;
+  color: #080909;
+  border: 1px solid #c9a227;
+}
+
+.victimology-btn-gold:hover {
+  background: #dfbd45;
+  border-color: #dfbd45;
+}
+
+.victimology-btn-outline {
+  background: rgba(255, 255, 255, 0.025);
+  color: #f5f2e8;
+  border: 1px solid rgba(245, 242, 232, 0.18);
+}
+
+.victimology-btn-outline:hover {
+  border-color: rgba(201, 162, 39, 0.60);
+  background: rgba(201, 162, 39, 0.05);
+}
+
+.victimology-btn span {
+  transition: transform 0.22s ease;
+}
+
+.victimology-btn:hover span {
+  transform: translateX(3px);
+}
+
+.victimology-hero-globe {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.victimology-hero-globe::after {
+  content: "";
+
+  position: absolute;
+
+  width: 70%;
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(201, 162, 39, 0.08),
+      transparent 66%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.victimology-section {
+  position: relative;
+
+  padding: 115px 0;
+
+  border-top: 1px solid rgba(245, 242, 232, 0.06);
+
+  background: #080909;
+}
+
+.victimology-dark-section {
+  background:
+    linear-gradient(
+      145deg,
+      #090a0a,
+      #0c0d0c
+    );
+}
+
+.victimology-section-intro {
+  max-width: 760px;
+
+  margin-bottom: 50px;
+}
+
+.victimology-section-label {
+  margin-bottom: 17px;
+
+  color: rgba(201, 162, 39, 0.78);
+
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+}
+
+.victimology-section-intro h2,
+.victimology-split h2 {
+  margin: 0;
+
+  color: #f5f2e8;
+
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 0.96;
+
+  letter-spacing: -0.05em;
+}
+
+.victimology-section-intro h2 span,
+.victimology-split h2 span {
+  color: #c9a227;
+}
+
+.victimology-section-intro p,
+.victimology-lead {
+  max-width: 650px;
+
+  margin: 22px 0 0;
+
+  color: rgba(245, 242, 232, 0.49);
+
+  font-size: 0.88rem;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   INTERACTIVE STAGES
+   ========================================================= */
+
+.victimology-stage-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.victimology-stage {
+  position: relative;
+
+  min-height: 116px;
+
+  padding: 18px;
+
+  border: 1px solid rgba(245, 242, 232, 0.09);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.018);
+
+  color: #f5f2e8;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease;
+}
+
+.victimology-stage:hover,
+.victimology-stage.is-active {
+  transform: translateY(-4px);
+
+  border-color: rgba(201, 162, 39, 0.42);
+
+  background: rgba(201, 162, 39, 0.055);
+}
+
+.victimology-stage-number {
+  display: block;
+
+  color: rgba(201, 162, 39, 0.52);
+
+  font-size: 0.57rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.victimology-stage-label {
+  display: block;
+
+  margin-top: 23px;
+
+  color: #f5f2e8;
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+}
+
+.victimology-stage-arrow {
+  position: absolute;
+  right: 16px;
+  top: 17px;
+
+  color: rgba(201, 162, 39, 0.65);
+
+  font-size: 0.9rem;
+}
+
+.victimology-stage-detail {
+  display: grid;
+  grid-template-columns: 100px 1fr 1.1fr;
+  gap: 30px;
+
+  align-items: start;
+
+  margin-top: 12px;
+  padding: 34px;
+
+  border: 1px solid rgba(201, 162, 39, 0.25);
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      125deg,
+      rgba(201, 162, 39, 0.065),
+      rgba(255, 255, 255, 0.015)
+    );
+}
+
+.victimology-stage-detail-number {
+  color: rgba(201, 162, 39, 0.33);
+
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 0.8;
+
+  letter-spacing: -0.06em;
+}
+
+.victimology-stage-detail-main > span {
+  color: #c9a227;
+
+  font-size: 0.56rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.victimology-stage-detail-main h3 {
+  margin: 8px 0 0;
+
+  color: #f5f2e8;
+
+  font-size: 1.55rem;
+}
+
+.victimology-stage-detail-main p {
+  margin-top: 10px;
+
+  color: rgba(245, 242, 232, 0.51);
+
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
+.victimology-stage-detail-points {
+  display: grid;
+  gap: 10px;
+}
+
+.victimology-point {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 10px;
+
+  align-items: start;
+}
+
+.victimology-point span {
+  color: rgba(201, 162, 39, 0.63);
+
+  font-size: 0.55rem;
+  font-weight: 800;
+}
+
+.victimology-point p {
+  margin: 0;
+
+  color: rgba(245, 242, 232, 0.50);
+
+  font-size: 0.72rem;
+  line-height: 1.55;
+}
+
+.victimology-flow {
+  display: flex;
+  align-items: center;
+
+  margin-top: 44px;
+}
+
+.victimology-flow-item {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  flex: 1;
+}
+
+.victimology-flow-item span {
+  color: rgba(245, 242, 232, 0.43);
+
+  font-size: 0.54rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.victimology-flow-dot {
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0;
+
+  border: 1px solid rgba(201, 162, 39, 0.42);
+  border-radius: 50%;
+
+  background: #080909;
+
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.victimology-flow-dot.is-active {
+  background: #c9a227;
+
+  box-shadow:
+    0 0 0 5px rgba(201, 162, 39, 0.08),
+    0 0 20px rgba(201, 162, 39, 0.15);
+}
+
+.victimology-flow-line {
+  flex: 1;
+
+  height: 1px;
+
+  margin: 0 9px;
+
+  background: rgba(201, 162, 39, 0.18);
+}
+
+.victimology-flow-note {
+  margin-top: 14px;
+
+  color: rgba(245, 242, 232, 0.31);
+
+  font-size: 0.60rem;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   FOUNDATION
+   ========================================================= */
+
+.victimology-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+
+  align-items: start;
+
+  margin-bottom: 55px;
+}
+
+.victimology-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: 20px;
+
+  color: #c9a227;
+
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+
+  text-decoration: none;
+}
+
+.victimology-text-link span {
+  transition: transform 0.2s ease;
+}
+
+.victimology-text-link:hover span {
+  transform: translateX(4px);
+}
+
+.victimology-definition-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.victimology-definition-card {
+  min-height: 280px;
+
+  padding: 25px;
+
+  border: 1px solid rgba(245, 242, 232, 0.08);
+  border-radius: 13px;
+
+  background: rgba(255, 255, 255, 0.017);
+
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.victimology-definition-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(201, 162, 39, 0.30);
+}
+
+.victimology-definition-card > span,
+.victimology-affected-card > span {
+  color: rgba(201, 162, 39, 0.62);
+
+  font-size: 0.54rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.victimology-card-symbol {
+  margin-top: 36px;
+
+  color: #c9a227;
+
+  font-size: 1.25rem;
+}
+
+.victimology-definition-card h3 {
+  margin-top: 13px;
+
+  color: #f5f2e8;
+
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.victimology-definition-card p {
+  margin-top: 10px;
+
+  color: rgba(245, 242, 232, 0.44);
+
+  font-size: 0.72rem;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   AFFECTED GROUPS
+   ========================================================= */
+
+.victimology-affected-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.victimology-affected-card {
+  min-height: 270px;
+
+  padding: 25px;
+
+  border: 1px solid rgba(245, 242, 232, 0.08);
+  border-radius: 13px;
+
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.victimology-affected-icon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 28px;
+
+  border: 1px solid rgba(201, 162, 39, 0.26);
+  border-radius: 11px;
+
+  color: #c9a227;
+}
+
+.victimology-affected-card h3 {
+  margin-top: 9px;
+
+  color: #f5f2e8;
+
+  font-size: 1.1rem;
+}
+
+.victimology-affected-card p {
+  margin-top: 10px;
+
+  color: rgba(245, 242, 232, 0.44);
+
+  font-size: 0.73rem;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   SCOPE
+   ========================================================= */
+
+.victimology-scope-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 11px;
+}
+
+.victimology-scope-card {
+  min-height: 205px;
+
+  padding: 23px;
+
+  border: 1px solid rgba(245, 242, 232, 0.08);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.015);
+
+  transition:
+    border-color 0.22s ease,
+    transform 0.22s ease;
+}
+
+.victimology-scope-card:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(201, 162, 39, 0.28);
+}
+
+.victimology-scope-card > span {
+  color: rgba(201, 162, 39, 0.55);
+
+  font-size: 0.58rem;
+  font-weight: 800;
+}
+
+.victimology-scope-card h3 {
+  margin-top: 32px;
+
+  color: #f5f2e8;
+
+  font-size: 0.96rem;
+}
+
+.victimology-scope-card p {
+  margin-top: 9px;
+
+  color: rgba(245, 242, 232, 0.44);
+
+  font-size: 0.70rem;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   COMPARISON
+   ========================================================= */
+
+.victimology-compare-section {
+  background:
+    linear-gradient(
+      150deg,
+      #0a0b0b,
+      #080909
+    );
+}
+
+.victimology-compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 70px 1fr;
+
+  align-items: stretch;
+}
+
+.victimology-compare-card {
+  min-height: 340px;
+
+  padding: 28px;
+
+  border: 1px solid rgba(245, 242, 232, 0.09);
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.victimology-compare-card.is-victimology {
+  border-color: rgba(201, 162, 39, 0.34);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(201, 162, 39, 0.065),
+      rgba(255, 255, 255, 0.018)
+    );
+}
+
+.victimology-compare-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.victimology-compare-top span {
+  color: rgba(201, 162, 39, 0.63);
+
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.victimology-compare-top strong {
+  color: rgba(245, 242, 232, 0.27);
+
+  font-size: 0.62rem;
+}
+
+.victimology-compare-icon {
+  margin-top: 55px;
+
+  color: #c9a227;
+
+  font-size: 1.35rem;
+}
+
+.victimology-compare-card h3 {
+  margin-top: 13px;
+
+  font-size: 1.25rem;
+}
+
+.victimology-compare-card p {
+  max-width: 520px;
+
+  margin-top: 11px;
+
+  color: rgba(245, 242, 232, 0.45);
+
+  font-size: 0.76rem;
+  line-height: 1.75;
+}
+
+.victimology-compare-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(201, 162, 39, 0.50);
+
+  font-size: 1.2rem;
+}
+
+
+/* =========================================================
+   WHY IT MATTERS
+   ========================================================= */
+
+.victimology-matter-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.victimology-matter-card {
+  min-height: 245px;
+
+  padding: 24px;
+
+  border-left: 1px solid rgba(201, 162, 39, 0.30);
+  background:
+    linear-gradient(
+      90deg,
+      rgba(201, 162, 39, 0.045),
+      transparent
+    );
+}
+
+.victimology-matter-card > span {
+  color: rgba(201, 162, 39, 0.60);
+
+  font-size: 0.57rem;
+  font-weight: 800;
+}
+
+.victimology-matter-card h3 {
+  margin-top: 45px;
+
+  font-size: 1rem;
+}
+
+.victimology-matter-card p {
+  margin-top: 10px;
+
+  color: rgba(245, 242, 232, 0.44);
+
+  font-size: 0.72rem;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   VICTIM CENTRED FOCUS
+   ========================================================= */
+
+.victimology-focus-section {
+  position: relative;
+  overflow: hidden;
+
+  padding: 125px 0;
+
+  border-top: 1px solid rgba(201, 162, 39, 0.12);
+
+  background:
+    radial-gradient(
+      circle at 75% 50%,
+      rgba(201, 162, 39, 0.07),
+      transparent 32%
+    ),
+    #090a0a;
+}
+
+.victimology-focus-section .victimology-container {
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  gap: 60px;
+
+  align-items: center;
+}
+
+.victimology-focus-content .victimology-mark {
+  margin-bottom: 30px;
+}
+
+.victimology-focus-content h2 {
+  margin: 0;
+
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 0.92;
+
+  letter-spacing: -0.05em;
+}
+
+.victimology-focus-content h2 span {
+  color: #c9a227;
+}
+
+.victimology-focus-content > p {
+  max-width: 610px;
+
+  margin-top: 22px;
+
+  color: rgba(245, 242, 232, 0.48);
+
+  font-size: 0.82rem;
+  line-height: 1.8;
+}
+
+.victimology-focus-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-top: 29px;
+}
+
+.victimology-focus-globe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   NEXT
+   ========================================================= */
+
+.victimology-next-section {
+  background: #050606;
+}
+
+.victimology-next-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.victimology-next-card {
+  display: grid;
+  grid-template-columns: 46px 1fr auto;
+  gap: 16px;
+
+  align-items: center;
+
+  padding: 21px;
+
+  border: 1px solid rgba(245, 242, 232, 0.08);
+  border-radius: 11px;
+
+  background: rgba(255, 255, 255, 0.015);
+
+  text-decoration: none;
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.victimology-next-card:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(201, 162, 39, 0.33);
+}
+
+.victimology-next-card > span {
+  color: rgba(201, 162, 39, 0.54);
+
+  font-size: 0.57rem;
+  font-weight: 800;
+}
+
+.victimology-next-card h3 {
+  margin: 0;
+
+  color: #f5f2e8;
+
+  font-size: 0.90rem;
+}
+
+.victimology-next-card p {
+  margin-top: 6px;
+
+  color: rgba(245, 242, 232, 0.42);
+
+  font-size: 0.68rem;
+  line-height: 1.6;
+}
+
+.victimology-next-card strong {
+  color: #c9a227;
+
+  transition: transform 0.2s ease;
+}
+
+.victimology-next-card:hover strong {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+  .victimology-hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .victimology-hero-globe {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .victimology-stage-detail {
+    grid-template-columns: 80px 1fr;
+  }
+
+  .victimology-stage-detail-points {
+    grid-column: 2;
+  }
+
+  .victimology-focus-section .victimology-container {
+    grid-template-columns: 1fr;
+  }
+
+  .victimology-focus-globe {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  .victimology-hero {
+    min-height: auto;
+
+    padding: 105px 6% 75px;
+  }
+
+  .victimology-hero h1 {
+    font-size: clamp(3.4rem, 15vw, 5.3rem);
+  }
+
+  .victimology-hero p {
+    font-size: 0.84rem;
+  }
+
+  .victimology-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .victimology-btn {
+    width: 100%;
+  }
+
+  .victimology-section {
+    padding: 85px 0;
+  }
+
+  .victimology-stage-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .victimology-stage-detail {
+    grid-template-columns: 1fr;
+    gap: 19px;
+
+    padding: 23px;
+  }
+
+  .victimology-stage-detail-number {
+    font-size: 3rem;
+  }
+
+  .victimology-stage-detail-points {
+    grid-column: auto;
+  }
+
+  .victimology-flow {
+    display: grid;
+    gap: 13px;
+  }
+
+  .victimology-flow-item {
+    flex: none;
+  }
+
+  .victimology-flow-line {
+    display: none;
+  }
+
+  .victimology-split {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .victimology-definition-grid,
+  .victimology-affected-grid,
+  .victimology-scope-grid,
+  .victimology-matter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .victimology-compare-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .victimology-compare-divider {
+    height: 34px;
+  }
+
+  .victimology-next-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .victimology-next-card {
+    grid-template-columns: 40px 1fr auto;
+  }
+
+}
+
+
+@media (max-width: 430px) {
+
+  .victimology-identity {
+    margin-bottom: 27px;
+  }
+
+  .victimology-mark {
+    width: 48px;
+    height: 48px;
+  }
+
+  .victimology-identity span {
+    font-size: 0.70rem;
+  }
+
+  .victimology-identity small {
+    font-size: 0.42rem;
+  }
+
+  .victimology-stage-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .victimology-section-intro h2,
+  .victimology-split h2 {
+    font-size: 2.65rem;
+  }
+
+  .victimology-focus-content h2 {
+    font-size: 2.9rem;
+  }
+
+}
